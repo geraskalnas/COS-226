@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "key.h"
 
+//#define DEBUG
+
 // return the ith bit of Key k
 int KEYbit(Key k, int i)
 {
@@ -57,8 +59,10 @@ Key KEYsubsetsum(Key k, Key T[N])
       if (KEYbit(k, i))
       {
          sum = KEYadd(sum, T[i]);
+#ifdef DEBUG
          printf("%2d ", i); // for debugging
          KEYshow(T[i]);     // for debugging
+#endif
       }
    return sum;
 }
